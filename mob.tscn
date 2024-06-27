@@ -1,52 +1,52 @@
 [gd_scene load_steps=10 format=3 uid="uid://cwi10uhmewf1v"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_pb06u"]
-[ext_resource type="Texture2D" uid="uid://c8xx2003jfdoo" path="res://art/enemyFlyingAlt_1.png" id="2_iigsl"]
-[ext_resource type="Texture2D" uid="uid://bb4tljba8ptib" path="res://art/enemyFlyingAlt_2.png" id="3_r50d2"]
-[ext_resource type="Texture2D" uid="uid://bgs6872u1llcc" path="res://art/enemySwimming_1.png" id="4_bhn2c"]
-[ext_resource type="Texture2D" uid="uid://ctqc0xnejeluh" path="res://art/enemySwimming_2.png" id="5_upyh7"]
-[ext_resource type="Texture2D" uid="uid://bcsclxbodbm6y" path="res://art/enemyWalking_1.png" id="6_mg3se"]
-[ext_resource type="Texture2D" uid="uid://b2y43pn84541v" path="res://art/enemyWalking_2.png" id="7_ddyvm"]
+[ext_resource type="Texture2D" uid="uid://c7338ngegwya0" path="res://sprites/goose_x2.png" id="2_e1i45"]
+[ext_resource type="Texture2D" uid="uid://cwcoqiakyn4v3" path="res://sprites/goose_aaah_x2.png" id="3_r17rf"]
+[ext_resource type="Texture2D" uid="uid://bjubuykts2e26" path="res://sprites/butter_x2.png" id="4_tk8en"]
+[ext_resource type="Texture2D" uid="uid://cpvf3tot7irqy" path="res://sprites/butter_aaah_x2.png" id="5_v3gdq"]
+[ext_resource type="Texture2D" uid="uid://y1t0iv6ychtf" path="res://sprites/gizmo_x2.png" id="6_2afuy"]
+[ext_resource type="Texture2D" uid="uid://b7inq044s3uf7" path="res://sprites/gizmo_aaah_x2.png" id="7_cs255"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vq5xa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_iigsl")
+"texture": ExtResource("4_tk8en")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_r50d2")
+"texture": ExtResource("5_v3gdq")
 }],
 "loop": true,
-"name": &"fly",
+"name": &"butter",
 "speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_bhn2c")
+"texture": ExtResource("6_2afuy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_upyh7")
+"texture": ExtResource("7_cs255")
 }],
 "loop": true,
-"name": &"swim",
+"name": &"gizmo",
 "speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_mg3se")
+"texture": ExtResource("2_e1i45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ddyvm")
+"texture": ExtResource("3_r17rf")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"goose",
 "speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j64vx"]
 radius = 48.0
-height = 133.333
+height = 101.333
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
@@ -54,9 +54,8 @@ gravity_scale = 0.0
 script = ExtResource("1_pb06u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_vq5xa")
-animation = &"swim"
+animation = &"goose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
